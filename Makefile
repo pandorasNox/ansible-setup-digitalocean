@@ -12,3 +12,7 @@ cli: ##@development cli with ansible
 	-w /source \
 	$(DOCKER_IMAGE_ANSIBLE) bash
 	# -v ~/.ssh:/root/.ssh:ro
+
+.PHONY: setup
+setup: ##setup runs ansible against inventory
+	ansible-playbook ansible/digitalocean-playbook.yml
