@@ -1,0 +1,23 @@
+
+- name: install tools
+  package:
+    name: "{{ item }}"
+    cache_valid_time: 86400 # 86400 sec = 1 day
+    use: apt
+  with_items:
+    - htop
+    - iotop
+    - atop
+    - nload
+    - sysstat
+    - screen
+    - tree
+    - smartmontools
+    - nano
+
+- name: update all installed packages
+  apt:
+    cache_valid_time: 86400 # 86400 sec = 1 day
+    upgrade: full
+    autoremove: true
+    autoclean: true

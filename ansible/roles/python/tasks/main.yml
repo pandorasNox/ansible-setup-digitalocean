@@ -1,0 +1,6 @@
+
+- name: install python
+  raw: sh -c "[ -f /usr/bin/python ] || ( apt update && apt install python -y )"
+  register: python_install_log
+  changed_when: python_install_log.stdout != ""
+

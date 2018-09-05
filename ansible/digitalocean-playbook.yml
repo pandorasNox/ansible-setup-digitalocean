@@ -1,0 +1,7 @@
+---
+
+- hosts: all
+  roles:
+    - role: python
+    - role: cli-tools
+  serial: 1
